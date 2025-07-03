@@ -1,19 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-peliculas',
-  standalone: false,
+  standalone: true,
   templateUrl: './peliculas.component.html',
-  styleUrl: './peliculas.component.css'
+  styleUrls: ['./peliculas.component.css'],
+  imports: [CommonModule]
 })
-export class PeliculasComponent {
+export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
+  
+  public titulo: string;
+  
   constructor(){
-    console.log("constructor lanzado");
-
+    console.log("constructor lanzado constructor");
+    this.titulo = "Componente Peliculas";
+  }
+  
+  ngOnInit() {
+    console.log("Componente iniciado ONinit");
   }
 
-  /*NgOnInit() {
-    console.log("Componente iniciado");
+  ngOnDestroy(): void {
+      console.log("El componente se va a eliminar");
   }
-  */
+    
+  ngDoCheck() {
+    console.log("Componente iniciado Docheck");
+  }
+
+  cambiarTitulo(){
+    this.titulo = "Titulo ha sido cambiado";
+  }
+
 }
