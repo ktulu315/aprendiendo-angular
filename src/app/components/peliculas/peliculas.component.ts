@@ -2,11 +2,11 @@ import { Component, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-peliculas',
   standalone: true,
+  selector: 'app-peliculas',
+  imports: [CommonModule],
   templateUrl: './peliculas.component.html',
   styleUrls: ['./peliculas.component.css'],
-  imports: [CommonModule]
 })
 export class PeliculasComponent implements OnInit, DoCheck, OnDestroy {
   

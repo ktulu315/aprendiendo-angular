@@ -13,15 +13,23 @@ export class AppComponent {
 */
 
 import { Component } from '@angular/core';
-import { MiComponente } from "./components/mi-componente/mi-componente.component";
-import { PeliculasComponent } from './components/peliculas/peliculas.component';
-import { CancionesComponent } from './components/canciones/canciones.component';
+import { RouterModule } from '@angular/router';
+import { HeaderComponent } from "./components/header/header.component";
+import { SliderComponent } from "./components/slider/slider.component";
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @Component({
-  selector: 'app-root',
   standalone: true,
-  imports: [MiComponente, PeliculasComponent, CancionesComponent],  // puedes agregar MiComponente aquí si lo usas
+  selector: 'app-root',
+  imports: [RouterModule,  
+    HeaderComponent, 
+    SliderComponent, 
+    SidebarComponent,
+    FooterComponent,
+
+    ],  // puedes agregar MiComponente aquí si lo usas
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

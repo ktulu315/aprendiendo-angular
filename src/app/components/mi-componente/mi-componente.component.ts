@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { PeliculasComponent } from "../peliculas/peliculas.component";
 
 @Component({
-    selector: 'mi-componente',
-    templateUrl: './mi-componente.component.html',
-    styleUrls: ['./mi-componente.component.css'],
     standalone: true,
-    imports: [CommonModule, PeliculasComponent]
+    selector: 'mi-componente',
+    imports: [CommonModule, PeliculasComponent],
+    templateUrl: './mi-componente.component.html',
+    styleUrls: ['./mi-componente.component.css']
 })
 
 export class MiComponente {

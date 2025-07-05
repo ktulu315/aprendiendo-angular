@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-canciones',
   templateUrl: './canciones.component.html',
   styleUrls: ['./canciones.component.css'],
-  standalone: true
 })
+
 export class CancionesComponent {
   public nombre: String;
   public pista: Number;
