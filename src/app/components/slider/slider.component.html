@@ -1,4 +1,7 @@
-<div id="slider" class="slider-big">
-    <h1>Bienvenido a la pagina de Angular hecha por David Eduardo Gualteros</h1>
-    <button class="btn-white" >Ir al Blog</button>
+<div id="slider" [ngClass] = "{
+    'slider-big': !size || size == 'big',
+    'slider-small': size == 'small'}">
+    
+    <h1>{{nombre}}</h1>
+    <button class="btn-white" routerLink="/blog" *ngIf="!size || size == 'big'">Ir al Blog</button>
 </div>

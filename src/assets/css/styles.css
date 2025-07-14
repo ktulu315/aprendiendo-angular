@@ -99,9 +99,9 @@ body{
 
 }
 
-#menu a:hover {
-    color: #eb0a0a;
-       
+#menu a:hover, 
+.active {
+    color: #eb0a0a !important;       
 }
 
 #slider {
@@ -283,6 +283,7 @@ textarea{
 
 .article-item .image-wrap img {
     height: 100%;
+    width: 100%;
     text-align: center;
 }
 
@@ -444,5 +445,6 @@ textarea{
     #slider.slider-small h1 {
         padding-top: 35px;
     }
-}
+} /* media */
+
 

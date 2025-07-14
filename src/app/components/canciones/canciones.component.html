@@ -1,5 +1,8 @@
-<div>
-    <h1>Canciones</h1>
+<app-slider [nombre] = "'Canciones'"></app-slider>
+<div class="center">
+    <section id="content">
+      <div>
+    <h1 class="subheader">Canciones</h1>
     <button (click)="llenarDatos()">Llenar datos</button>
     <button (click)="borrarDatos()">Borrar datos</button>
     <ul>
@@ -7,4 +10,7 @@
             <p>{{pista}} - {{nombre}} - {{duracion}}</p>
         </li>
     </ul>
+</div>
+   </section>
+   <app-sidebar></app-sidebar>
 </div>

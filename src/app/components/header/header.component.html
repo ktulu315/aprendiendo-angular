@@ -2,7 +2,7 @@
         <div class="center">
             <!--Logo-->
             <div id="logo">
-                <img src="images/angular.svg" alt="logotipo" class="app-logo" />
+                <img src="images/angular.svg" alt="logo-angular" class="app-logo" />
                 <span id="brand">
                     <strong>Curso</strong>Angular
                 </span>
@@ -11,19 +11,19 @@
             <nav id="menu">
                 <ul>
                     <li>
-                        <a href="index.html">Inicio</a>
+                        <a routerLink="home"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
                     </li>
                     <li>
-                        <a href="blog.html">Blog</a>
+                        <a routerLink="blog" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Blog</a>
                     </li>
                     <li>
-                        <a href="formulario.html">Formulario</a>
+                        <a routerLink="formulario" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Formulario</a>
                     </li>
                     <li>
-                        <a href="#">Pagina1</a>
+                        <a routerLink="peliculas" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Peliculas</a>
                     </li>
                     <li>
-                        <a href="#">Pagina2</a>
+                        <a routerLink="pagina-de-prueba" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Página</a>
                     </li>
                 </ul>
             </nav>

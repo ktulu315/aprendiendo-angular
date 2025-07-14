@@ -1,8 +1,27 @@
-<h1>{{titulo}}</h1>
-<button (click)="cambiarTitulo()">Modificar titulo</button>
-<p>peliculas works!</p>
-<ul>
-    <li>Lista 1</li>
-    <li>Lista 2</li>
-    <li>Lista 3</li>
-</ul>
+<app-slider [nombre]="'Peliculas'" [size] = "'small'"></app-slider>
+<div class="center">
+<section id="content">
+<!--    
+    <button (click)="cambiarTitulo()">Modificar titulo</button>
+    <hr />
+-->
+    <h1 class="subheader">{{ titulo }}</h1>
+    <div id="favorita"  *ngIf="favorita">
+      <h3 class="subheader">Pelicula Favorita:</h3>
+      <h4>{{favorita.title}}</h4>
+      <h5>{{favorita.year}}</h5>
+    </div>
+
+    <div id="articles" *ngIf="peliculas" >
+
+      <div *ngFor="let pelicula of peliculas; let i = index">
+        <app-pelicula
+          [pelicula] = "pelicula"
+          (MarcarFavorita) = "mostrarFavorita($event, pelicula)"
+        ></app-pelicula>      
+      </div>
+  
+    </div>
+  </section>
+  <app-sidebar></app-sidebar>
+</div>

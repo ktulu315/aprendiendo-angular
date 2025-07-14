@@ -1,11 +1,17 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
+  standalone: true,
   selector: 'app-slider',
-  imports: [],
+  imports: [RouterLink, CommonModule],
   templateUrl: './slider.component.html',
-  styleUrl: './slider.component.css'
+  styleUrls: ['./slider.component.css']
 })
 export class SliderComponent {
+  @Input() nombre!: string;
+  @Input() size!: string;
 
 }
+ 

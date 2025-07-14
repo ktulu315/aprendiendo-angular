@@ -1,1 +1,21 @@
-<p>pagina works!</p>
+
+<app-slider [nombre] = "'Página'"></app-slider>
+<div class="center">
+    <section id="content">
+      <h1 class="subheader">Pagina de pruebas</h1>
+      
+      <div *ngIf="nombre && apellido">
+        <h2>Tu Nombre es: {{ nombre }}</h2>
+        <h2>Tu Apellido es: {{ apellido }}</h2>
+      </div>
+      
+      <div *ngIf="!nombre || !apellido">
+        <h2>No hay parametros por URL</h2>
+        <button class="btn btn-success" (click)="redireccion()">Llenar datos</button>
+      </div>
+
+    </section>
+   <app-sidebar></app-sidebar>
+</div>
+
+

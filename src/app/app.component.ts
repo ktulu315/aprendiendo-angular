@@ -15,8 +15,6 @@ export class AppComponent {
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from "./components/header/header.component";
-import { SliderComponent } from "./components/slider/slider.component";
-import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { FooterComponent } from './components/footer/footer.component';
 
 
@@ -25,15 +23,13 @@ import { FooterComponent } from './components/footer/footer.component';
   selector: 'app-root',
   imports: [RouterModule,  
     HeaderComponent, 
-    SliderComponent, 
-    SidebarComponent,
     FooterComponent,
 
-    ],  // puedes agregar MiComponente aquí si lo usas
+    ],  // Aca se deben agregar los componentes que se van a usar
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 
 export class AppComponent {
-  title = 'Titulo de app.component.ts';
+  public title = 'Titulo de app.component.ts';
 }
