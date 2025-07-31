@@ -5,15 +5,17 @@
     <button (click)="cambiarTitulo()">Modificar titulo</button>
     <hr />
 -->
-    <h1 class="subheader">{{ titulo }}</h1>
-    <div id="favorita"  *ngIf="favorita">
-      <h3 class="subheader">Pelicula Favorita:</h3>
-      <h4>{{favorita.title}}</h4>
-      <h5>{{favorita.year}}</h5>
-    </div>
+<!-- <h1 class="subheader">{{ titulo }}</h1> -->
+<div id="favorita"  *ngIf="favorita">
+  <h2 class="">Pelicula Favorita:</h2>
+  <h4>{{favorita.title | uppercase }}</h4>
+  <h5>{{favorita.year | date }}</h5>
+  <h5>{{this.fecha | date: 'dd/MM/yyyy' }}</h5>
+</div>
 
-    <div id="articles" *ngIf="peliculas" >
-
+<h1 class="subheader">{{ titulo }}</h1>
+<div id="articles" *ngIf="peliculas" >
+  
       <div *ngFor="let pelicula of peliculas; let i = index">
         <app-pelicula
           [pelicula] = "pelicula"
