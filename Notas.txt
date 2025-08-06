@@ -1,0 +1,1 @@
+npm install --save angular2-moment (instalacion para Pipes de formato de fechas)
