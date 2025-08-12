@@ -17,8 +17,14 @@ import { Global } from "./global";
         return "Servicio de article ejecutadoo";
     }
 
-    getArticles():Observable<any> {
-        return this._http.get(this.url + 'articles')
+    getArticles(last: any = null):Observable<any> {
+        
+        let articles = 'articles';
+        
+        if(last != null){
+            articles = 'articles/5';
+        }
+        return this._http.get(this.url + articles);
     }
 
 }
