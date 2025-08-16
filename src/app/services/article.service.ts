@@ -31,4 +31,9 @@ import { Global } from "./global";
         return this._http.get(this.url + "article/" + articleId);
     }
 
+    search(searchString: string):Observable<any>{
+        return this._http.get(this.url + 'search/' + searchString);
+
+    }
+
 }

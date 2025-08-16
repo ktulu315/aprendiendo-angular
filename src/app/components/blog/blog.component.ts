@@ -34,10 +34,6 @@ export class BlogComponent implements OnInit{
         if(response.articles){
           this.articles = response.articles;
         }
-        console.log(this.articles[0]);
-        console.log(this.articles[0].date);
-        console.log(this.articles[0]);
-
       },
       error => {
         console.log("Error al llamar los articulos! " + error.message);
