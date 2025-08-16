@@ -27,4 +27,8 @@ import { Global } from "./global";
         return this._http.get(this.url + articles);
     }
 
+    getArticle(articleId: any):Observable<any>{
+        return this._http.get(this.url + "article/" + articleId);
+    }
+
 }
