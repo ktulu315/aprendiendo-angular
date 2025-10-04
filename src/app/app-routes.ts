@@ -20,7 +20,8 @@ export const routes: Routes = [
     {path: 'pagina-de-prueba', component: PaginaComponent},
     {path: 'pagina-de-prueba/:nombre/:apellido', component: PaginaComponent},
     {path: '**', component: ErrorComponent} //debe ser la ultima
+  
     //  {path: 'header', component: HeaderComponent}
-  // ejemplo:
-  // { path: '', component: HomeComponent },
+    // ejemplo:
+    // { path: '', component: HomeComponent },
 ];
