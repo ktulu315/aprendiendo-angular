@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { SliderComponent } from '../slider/slider.component';
 import { ArticlesComponent } from '../articles/articles.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
@@ -17,6 +17,7 @@ import { ArticleService } from '../../services/article.service';
 export class SearchComponent implements OnInit{
   
   public articles: Article[];
+  public searched: string;
   
   constructor(
       private _route: ActivatedRoute,
@@ -24,27 +25,27 @@ export class SearchComponent implements OnInit{
       private _articleService: ArticleService
   ){
     this.articles = [];
-
+    this.searched = "";
   }
 
   ngOnInit(){
     this._route.params.subscribe(params => {
-      let search = params['search']; //captura la busqueda desde el url
-      this._articleService.search(search).subscribe(response => {
-        console.log(response);
-        if(response.articles){
-          this.articles = response.articles;
+      let searchedText = params['search']; //captura la busqueda desde el url
+      this.searched = searchedText;
+      this._articleService.search(searchedText).subscribe(
+        response => {
+          if(response.articles){
+            this.articles = response.articles;
+          }
           console.log(this.articles);
+        },
+        error => {
+          this.articles = [];
+          console.log("Error:" + error.message);
+
         }
-      },
-      error => {
-        console.log("no entro");
-        this._router.navigate(['/home']);
-      })
-    },
-    error =>{
-      console.log(error);
-    })
-  }
+      )
+    });
+  }    
 
 } 

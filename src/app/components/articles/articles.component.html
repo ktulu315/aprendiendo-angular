@@ -1,7 +1,7 @@
-<div class="loading" *ngIf="!articles">
-    <h4>
-        Cargando...
-    </h4>
+<div class="loading" *ngIf="articles.length == 0">
+    <p>
+        La busqueda "<strong>{{textSearched}}</strong>" no arrojó ningun resultado!
+    </p>
 </div>
 
 <div id="articles" *ngIf="articles">
