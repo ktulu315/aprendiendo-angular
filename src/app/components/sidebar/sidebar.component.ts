@@ -1,11 +1,11 @@
 import { Component, OnInit} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {Router, ActivatedRoute, Params} from '@angular/router' 
+import { Router, ActivatedRoute, Params, RouterLink } from '@angular/router' 
 
 @Component({
   standalone: true,
   selector: 'app-sidebar',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })

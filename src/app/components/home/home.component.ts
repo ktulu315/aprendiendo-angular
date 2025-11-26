@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [SliderComponent, SidebarComponent, CommonModule, ArticlesComponent],
+  imports: [SliderComponent, SidebarComponent, CommonModule, ArticlesComponent ],
   providers: [ArticleService, ArticlesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
