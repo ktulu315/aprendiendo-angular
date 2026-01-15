@@ -8,7 +8,7 @@ import { SidebarComponent } from "../sidebar/sidebar.component";
 @Component({
   standalone: true,
   selector: 'app-article-new',
-  imports: [FormsModule, CommonModule, SidebarComponent],
+  imports: [FormsModule, CommonModule, SidebarComponent ],
   templateUrl: './article-new.html',
   styleUrl: './article-new.css'
 })

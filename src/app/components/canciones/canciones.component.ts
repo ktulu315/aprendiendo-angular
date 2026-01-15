@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { SidebarComponent } from "../sidebar/sidebar.component";
+import { SliderComponent } from "../slider/slider.component";
 
 @Component({
   standalone: true,
   selector: 'app-canciones',
   templateUrl: './canciones.component.html',
   styleUrls: ['./canciones.component.css'],
+  imports: [SidebarComponent, SliderComponent],
 })
 
 export class CancionesComponent {
