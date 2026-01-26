@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http"; 
+import { HttpClient, HttpHeaders } from "@angular/common/http"; 
 import { Observable } from "rxjs";
 import { Global } from "./global";
+import { Article } from "../models/article";
 
 @Injectable({ providedIn: 'root'}) export class ArticleService {
 
@@ -33,6 +34,13 @@ import { Global } from "./global";
 
     search(searchString: string):Observable<any>{
         return this._http.get(this.url + 'search/' + searchString);
+    }
+
+    create(article: Article):Observable<any> {
+        let params = JSON.stringify(article);
+        let headers = new HttpHeaders().set("content-type", "application/json");
+
+        return this._http.post(this.url + 'save', params, {headers});
     }
 
 }

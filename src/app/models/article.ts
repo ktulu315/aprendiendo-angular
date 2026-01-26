@@ -7,9 +7,7 @@ export class Article {
         public content: string,
         public image: string,
         public date: any
-    ){
-
-    }
+    ){}
 }
 
 /* esquema en el backend
