@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { Params, Router, ActivatedRoute } from '@angular/router';
 import { SliderComponent } from '../slider/slider.component';
@@ -7,7 +7,7 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 @Component({
   standalone: true,
   selector: 'app-pagina',
-  imports: [CommonModule, SliderComponent, SidebarComponent],
+  imports: [SliderComponent, SidebarComponent],
   templateUrl: './pagina.component.html',
   styleUrls: ['./pagina.component.css']
 })

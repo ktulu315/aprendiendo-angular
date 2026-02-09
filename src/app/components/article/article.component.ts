@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { Article } from '../../models/article';
 import { ArticleService } from '../../services/article.service';
-import { CommonModule } from '@angular/common';
+
 import { MomentModule } from 'ngx-moment';
 import { Global } from '../../services/global';
 import { Router, ActivatedRoute, Route } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router, ActivatedRoute, Route } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-article',
-  imports: [SidebarComponent, CommonModule, MomentModule],
+  imports: [SidebarComponent, MomentModule],
   providers: [ArticleService],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'

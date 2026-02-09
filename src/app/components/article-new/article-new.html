@@ -1,35 +1,39 @@
 <div class="center">
-    <section id="content">
-        
-        <h1 class="subheader">Nuevo artículo</h1>
-        
-        <form class="mid-form" #articleForm="ngForm" (ngSubmit)="onSubmit()">
-            
-            <div class="form-group">
-                <label for="nombre">Titulo</label>
-                <input type="text" name="title" #title="ngModel"[(ngModel)]="article.title" required>
-                <small *ngIf="!title.valid && title.touched">
-                    Titulo invalido
-                </small>
-            </div>   
+  <section id="content">
 
-            <div class="form-group">
-                <label for="content">Contenido</label>
-                <textarea name="content" #content="ngModel"[(ngModel)]="article.content" required></textarea>
-                <small *ngIf="!content.valid && content.touched">
-                    Contenido no válido
-                </small>
-            </div>
-            
-            <div class="form-group">
-                <label for="image">Imagen</label>
-                <input type="file" name="file0" required>
-            </div>
+    <h1 class="subheader">Nuevo artículo</h1>
 
-            <div class="clearfix"></div>
-            <input type="submit" class="btn btn-success" value="enviar" [disabled]="articleForm.invalid"/>
-            <input type="reset" class="btn btn-danger" value="Limpiar"/>
-        </form>
-   </section>
-   <app-sidebar></app-sidebar>
+    <form class="mid-form" #articleForm="ngForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="nombre">Titulo</label>
+        <input type="text" name="title" #title="ngModel"[(ngModel)]="article.title" required>
+        @if (!title.valid && title.touched) {
+          <small>
+            Titulo invalido
+          </small>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="content">Contenido</label>
+        <textarea name="content" #content="ngModel"[(ngModel)]="article.content" required></textarea>
+        @if (!content.valid && content.touched) {
+          <small>
+            Contenido no válido
+          </small>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="image">Imagen</label>
+        <input type="file" name="file0" required>
+      </div>
+
+      <div class="clearfix"></div>
+      <input type="submit" class="btn btn-success" value="enviar" [disabled]="articleForm.invalid"/>
+      <input type="reset" class="btn btn-danger" value="Limpiar"/>
+    </form>
+  </section>
+  <app-sidebar></app-sidebar>
 </div>

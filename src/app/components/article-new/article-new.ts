@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Article } from '../../models/article';
-import { CommonModule } from '@angular/common';
+
 import { SidebarComponent } from "../sidebar/sidebar.component";
 import { ArticleService } from '../../services/article.service';
 import { Router, ActivatedRoute, Params, Route } from '@angular/router';
@@ -10,7 +10,7 @@ import { Router, ActivatedRoute, Params, Route } from '@angular/router';
 @Component({
   standalone: true,
   selector: 'app-article-new',
-  imports: [FormsModule, CommonModule, SidebarComponent ],
+  imports: [FormsModule, SidebarComponent],
   templateUrl: './article-new.html',
   styleUrl: './article-new.css',
   providers: [ArticleService]

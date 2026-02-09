@@ -1,3 +1,4 @@
+import { provideZoneChangeDetection } from "@angular/core";
 /*
 import { platformBrowser } from '@angular/platform-browser';
 import { AppModule } from './app/app.module.ts.old';
@@ -20,7 +21,7 @@ moment.locale('es');
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes),
+    provideZoneChangeDetection(),provideRouter(routes),
     provideHttpClient()
   ]
 })

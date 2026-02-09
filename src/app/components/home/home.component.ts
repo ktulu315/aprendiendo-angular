@@ -4,12 +4,12 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
 import { ArticleService } from '../../services/article.service';
 import { ArticlesComponent } from '../articles/articles.component';
 import { Article } from '../../models/article';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
   standalone: true,
   selector: 'app-home',
-  imports: [SliderComponent, SidebarComponent, CommonModule, ArticlesComponent ],
+  imports: [SliderComponent, SidebarComponent, ArticlesComponent],
   providers: [ArticleService, ArticlesComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

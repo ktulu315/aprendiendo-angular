@@ -1,20 +1,30 @@
-<div class="loading" *ngIf="articles.length == 0">
+@if (articles.length == 0) {
+  <div class="loading">
     <p>
-        La busqueda "<strong>{{textSearched}}</strong>" no arrojó ningun resultado!
+      La busqueda "<strong>{{textSearched}}</strong>" no arrojó ningun resultado!
     </p>
-</div>
+  </div>
+}
 
-<div id="articles" *ngIf="articles">
-    <article class="article-item" id="article-template" *ngFor="let article of articles">
+@if (articles) {
+  <div id="articles">
+    @for (article of articles; track article) {
+      <article class="article-item" id="article-template">
         <div class="image-wrap">
-            <img src="{{url + 'get-image/' + article.image}}" alt="{{article.title}}" *ngIf="article.image">      
-            <img src="images/default.png" alt="{{article.title}}" *ngIf="!article.image">      
+          @if (article.image) {
+            <img src="{{url + 'get-image/' + article.image}}" alt="{{article.title}}">
+          }
+          @if (!article.image) {
+            <img src="images/default.png" alt="{{article.title}}">
+          }
         </div>
         <h2>{{article.title}}</h2>
         <span class="date">
-            {{article.date | amLocale: "es" | amTimeAgo }}
+          {{article.date | amLocale: "es" | amTimeAgo }}
         </span>
         <a [routerLink]="['/blog/articulo', article._id]">Leer mas...</a>
         <div class="clearfix"></div>
-    </article>
-</div>
+      </article>
+    }
+  </div>
+}

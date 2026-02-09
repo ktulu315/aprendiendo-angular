@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SliderComponent } from '../slider/slider.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
-import { CommonModule } from '@angular/common';
+
 import { ArticleService } from '../../services/article.service';
 import { Article } from '../../models/article';
 import { Global } from '../../services/global';
@@ -10,7 +10,7 @@ import { ArticlesComponent } from "../articles/articles.component";
 @Component({
   standalone: true,
   selector: 'app-blog',
-  imports: [SliderComponent, SidebarComponent, CommonModule, ArticlesComponent],
+  imports: [SliderComponent, SidebarComponent, ArticlesComponent],
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css'],
   providers: [ArticleService, ArticlesComponent]
